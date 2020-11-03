@@ -25,12 +25,14 @@ int main()
         scanf("%d", &x);
     }
     else if (y == 2) {
-        printf("1 => blaa blaa, \n");
+        printf("1 => Grup kırılma indisi,\n");
+        printf("2 => blaa blaaa\n");
         scanf("%d", &z);
     }
 
     // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
     if (y == 1) {
+        printf("###ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!###");
         // Frekans hesaplanması, GHz cinsinden.
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
@@ -58,6 +60,7 @@ int main()
 
     // KIRILMA İNDİSİ (n) (Bir dalganın ortamdaki yavaşlama katsayısı)
     else if (y == 2) {
+        printf("###KIRILMA İNDİSİ (n)!!!###");
         // Grup Kırılma İndisi (ng) hesaplanması
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
