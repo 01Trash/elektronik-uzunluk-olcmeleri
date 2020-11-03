@@ -28,8 +28,8 @@ int main()
         scanf("%d", &z);
     }
 
+    // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
     if (y == 1) {
-        // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
         // Frekans hesaplanması, GHz cinsinden.
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
@@ -56,7 +56,9 @@ int main()
     }
 
     // KIRILMA İNDİSİ (n) (Bir dalganın ortamdaki yavaşlama katsayısı)
-    // Grup Kırılma İndisi (ng) hesaplanması
-    printf("lamda");
+    else if (y == 2) {
+        // Grup Kırılma İndisi (ng) hesaplanması
+        printf("lamda");
+    }
 
 }
