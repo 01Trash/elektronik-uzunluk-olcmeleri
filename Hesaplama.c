@@ -5,10 +5,15 @@ int main()
 {
     int x, y, z;
     long double c_Zero =  299792458; //c_Zero (boşlukta ışık hızı, m/s cinsinden)
-    long double f, lamda_Zero; //f (frekans), lamda_Zero (lamda değeri)
+    long double f; //f (frekans)
+    long double lamda_Zero; //lamda_Zero (lamda değeri)
     long double T; //T (periyod)
-    long double faz_Grad, s; //faz_Grad (Faz açsı grad cinsinden), s (devir sayısı)
-    long double n_g = //Grup kırılma indisi (ng)
+    long double faz_Grad; //faz_Grad (Faz açsı grad cinsinden)
+    long double s; //s (devir sayısı)
+    long double n_g; //Grup kırılma indisi (ng)
+    long double E_ussu; //E üssü değeri mmHg cinsinden
+    long double P; //P (mmHg) hava basıncı değeri
+    long double e; //e değeri mmHg cinsinden
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -25,8 +30,10 @@ int main()
         scanf("%d", &x);
     }
     else if (y == 2) {
-        printf("\n1 => Grup kırılma indisi,\n");
-        printf("2 => blaa blaaa\n");
+        printf("\n1 => Grup kırılma indisi (ng) hesaplanması,\n");
+        printf("2 => E üssü hesaplanması mmHg cinsinden,\n");
+        printf("3 => e değerinin hesaplanması mmHg cinsinden,\n");
+        printf("4 => blaa blaa\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
     }
@@ -68,6 +75,18 @@ int main()
         n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) + 1;
         if (z == 1) {
             printf("n_g: %.20Lf\n", n_g);
+        }
+        // E üssü hesaplanması mmHg cinsinden
+        E_ussu = pow(10, (((7.5 * 9) / (273.15 + 9)) + 0.6609));
+        if (z == 2) {
+            printf("E_ussu: %Lf mmHg\n", E_ussu);
+        }
+        // e değerinin hesaplanması mmHg cinsinden
+        printf("P değerini mmHg cinsinden giriniz: ");
+        scanf("%Lf", &P);
+        e = E_ussu - 0.5 * (12-9) * (P / 755);
+        if (z == 3) {
+            printf("e: %Lf\n", e);
         }
     }
 
