@@ -109,7 +109,7 @@ int main()
             printf("e: %.13Lf\n", e);
         }
         // n_I değeri hesaplanması
-        printf("t (kuru sıcaklık) değerini gir: ");
+        printf("t (kuru sıcaklık) santigrad cinsinden gir: ");
         scanf("%Lf", &t);
         n_I = 1 + ((0.35947 * (n_g - 1) * P) / (273.2 + t)) - ((1.5026 * e * pow(10, -5)) / (273.2 + t));
         if (z == 4) {
@@ -137,7 +137,7 @@ int main()
             printf("E_ussu: %Lf mmHg\n", E_ussu);
         }
         // e değerinin hesaplanması mmHg cinsinden
-        printf("t (kuru sıcaklık) değerini gir: ");
+        printf("t (kuru sıcaklık) santigrad cinsinden gir: ");
         scanf("%Lf", &t);
         printf("P değerini mmHg cinsinden giriniz: ");
         scanf("%Lf", &P);
