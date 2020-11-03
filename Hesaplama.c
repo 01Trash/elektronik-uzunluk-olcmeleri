@@ -18,21 +18,22 @@ int main()
     printf("Hangisi: ");
     scanf("%d", &y);
     if (y == 1) {
-        printf("1 => Frekans hesaplaması,\n");
+        printf("\n1 => Frekans hesaplaması,\n");
         printf("2 => Periyod hesaplaması,\n");
         printf("3 => Faz açısı hesaplaması,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &x);
     }
     else if (y == 2) {
-        printf("1 => Grup kırılma indisi,\n");
+        printf("\n1 => Grup kırılma indisi,\n");
         printf("2 => blaa blaaa\n");
+        printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
     }
 
     // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
     if (y == 1) {
-        printf("###ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!###");
+        printf("\n###ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!###\n");
         // Frekans hesaplanması, GHz cinsinden.
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
@@ -60,11 +61,14 @@ int main()
 
     // KIRILMA İNDİSİ (n) (Bir dalganın ortamdaki yavaşlama katsayısı)
     else if (y == 2) {
-        printf("###KIRILMA İNDİSİ (n)!!!###");
+        printf("\n###KIRILMA İNDİSİ (n)!!!###\n");
         // Grup Kırılma İndisi (ng) hesaplanması
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
         n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) - 1;
+        if (z == 1) {
+            printf("n_g: %.20Lf\n", n_g);
+        }
     }
 
 }
