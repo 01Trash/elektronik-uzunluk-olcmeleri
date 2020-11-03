@@ -8,6 +8,7 @@ int main()
     long double f, lamda_Zero; //f (frekans), lamda_Zero (lamda değeri)
     long double T; //T (periyod)
     long double faz_Grad, s; //faz_Grad (Faz açsı grad cinsinden), s (devir sayısı)
+    long double n_g = //Grup kırılma indisi (ng)
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -58,7 +59,9 @@ int main()
     // KIRILMA İNDİSİ (n) (Bir dalganın ortamdaki yavaşlama katsayısı)
     else if (y == 2) {
         // Grup Kırılma İndisi (ng) hesaplanması
-        printf("lamda");
+        printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
+        scanf("%Lf", &lamda_Zero);
+        n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) - 1;
     }
 
 }
