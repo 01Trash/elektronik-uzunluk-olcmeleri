@@ -17,6 +17,7 @@ int main()
     long double t; //t (kuru sıcaklık) santigrad cinsinden
     long double n_I; //n_ı değeri
     long double c; //c değeri m/s cinsinden
+    long double lamda; //Ortamdaki lamda değeri
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -38,6 +39,7 @@ int main()
         printf("3 => e değerinin hesaplanması mmHg cinsinden,\n");
         printf("4 => n_I değeri hesaplanması,\n");
         printf("5 => c değerinin hesaplanması m/s cinsinden,\n");
+        printf("6 => Ortamdaki lamda değerinin hesaplanması,");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
     }
@@ -103,6 +105,11 @@ int main()
         c = c_Zero / n_I;
         if (z == 5) {
             printf("c: %.2Lf\n", c);
+        }
+        // Ortamdaki lamda değerinin hesaplanması
+        lamda = lamda_Zero / n_I;
+        if (z == 6) {
+            printf("lamda: %Lf\n", lamda);
         }
     }
 
