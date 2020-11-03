@@ -20,6 +20,7 @@ int main()
     long double c; //c değeri m/s cinsinden
     long double lamda; //Ortamdaki lamda değeri Mikrometre(µm) cinsinden
     long double n_m; //Mikro dalga kırılma indisi (nm)
+    long double Essen_Froome; //Essen ve Froome eşitliği
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -50,6 +51,7 @@ int main()
         printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
         printf("2 => e değerinin hesaplanması mmHg cinsinden,\n");
         printf("3 => Mikro dalga kırılma indisi (nm) hesaplanması,\n");
+        printf("4 => Essen ve Froome eşitliği,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &w);
     }
@@ -62,12 +64,12 @@ int main()
         scanf("%Lf", &lamda_Zero);
         f = c_Zero / (lamda_Zero * pow(10, -6));
         if (x == 1) {
-            printf("f: %Lf GHz cinsinden.\n", f);
+            printf("f: %Lf GHz\n", f);
         }
         // Periyod (T) hesaplaması, ns cinsinden.
         T = 1 / (f * pow(10, -9));
         if (x == 2) {
-            printf("T: %.25Lf ns cinsinden.\n", T);
+            printf("T: %.25Lf nanosaniye\n", T);
         }
         // Faz açısı hesaplanması grad cinsinden.
         printf("Işığın boşlukta aldığı yolu (s) metre cinsinden giriniz: ");
@@ -78,7 +80,7 @@ int main()
         long double a = 400;
         faz_Grad = fmod(faz_Grad, a);
         if (x == 3) {
-            printf("faz_Grad: %.4Lf grad.\n", faz_Grad);
+            printf("faz_Grad: %.4Lf grad\n", faz_Grad);
         }
     }
 
@@ -132,7 +134,7 @@ int main()
         scanf("%Lf", &t_ussu);
         E_ussu = pow(10, (((7.5 * t_ussu) / (237.3 + t_ussu)) + 0.6609));
         if (w == 1) {
-            printf("E_ussu: %Lf mmHg", E_ussu);
+            printf("E_ussu: %Lf mmHg\n", E_ussu);
         }
         // e değerinin hesaplanması mmHg cinsinden
         printf("t (kuru sıcaklık) değerini gir: ");
@@ -148,6 +150,10 @@ int main()
         if (w == 3) {
             printf("n_m: %.20Lf\n", n_m);
         }
+        // Essen ve Froome eşitliği
+        Essen_Froome = n_m + 0.5 * pow(10, -6);
+        if (w == 4) {
+            printf("Essen ve Froome Eşitliği: %.13Lf\n", Essen_Froome);
+        }
     }
-
 }
