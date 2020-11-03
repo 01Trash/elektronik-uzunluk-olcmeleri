@@ -17,7 +17,7 @@ int main()
     long double t; //t (kuru sıcaklık) santigrad cinsinden
     long double n_I; //n_ı değeri
     long double c; //c değeri m/s cinsinden
-    long double lamda; //Ortamdaki lamda değeri
+    long double lamda; //Ortamdaki lamda değeri Mikrometre(µm) cinsinden
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -106,10 +106,10 @@ int main()
         if (z == 5) {
             printf("c: %.2Lf\n", c);
         }
-        // Ortamdaki lamda değerinin hesaplanması
-        lamda = lamda_Zero / n_I;
+        // Ortamdaki lamda değerinin hesaplanması Mikrometre(µm) cinsinden
+        lamda = (lamda_Zero / n_I) * pow(10, 3);
         if (z == 6) {
-            printf("lamda: %Lf\n", lamda);
+            printf("lamda: %.13Lf\n", lamda);
         }
     }
 
