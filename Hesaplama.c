@@ -19,6 +19,7 @@ int main()
     long double n_I; //n_ı değeri
     long double c; //c değeri m/s cinsinden
     long double lamda; //Ortamdaki lamda değeri Mikrometre(µm) cinsinden
+    long double n_m; //Mikro dalga kırılma indisi (nm)
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -47,7 +48,8 @@ int main()
     }
     else if (y == 3) {
         printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
-        printf("2 => bla blaa.. ,\n");
+        printf("2 => e değerinin hesaplanması mmHg cinsinden,\n");
+        printf("3 => Mikro dalga kırılma indisi (nm) hesaplanması,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &w);
     }
@@ -100,7 +102,7 @@ int main()
         // e değerinin hesaplanması mmHg cinsinden
         printf("P değerini mmHg cinsinden giriniz: ");
         scanf("%Lf", &P);
-        e = E_ussu - 0.5 * (12 - t_ussu) * (P / 755);
+        e = E_ussu - 0.5 * (t - t_ussu) * (P / 755);
         if (z == 3) {
             printf("e: %.13Lf\n", e);
         }
@@ -123,11 +125,29 @@ int main()
         }
     }
 
-    // MİKRO DALGALARIN KIRILMA İNDİSİ (n)!!!
+    // MİKRO DALGALARIN KIRILMA İNDİSİ (nm)!!!
     else if (y == 3) {
-        // E üssü değerinin hesaplanması
-        printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
+        // E üssü değerinin hesaplanması mmHg cinsinden
+        printf("t_ussu değerini santigrad cinsinden gir: ");
+        scanf("%Lf", &t_ussu);
+        E_ussu = pow(10, (((7.5 * t_ussu) / (237.3 + t_ussu)) + 0.6609));
+        if (w == 1) {
+            printf("E_ussu: %Lf mmHg", E_ussu);
+        }
+        // e değerinin hesaplanması mmHg cinsinden
+        printf("t (kuru sıcaklık) değerini gir: ");
+        scanf("%Lf", &t);
+        printf("P değerini mmHg cinsinden giriniz: ");
+        scanf("%Lf", &P);
+        e = E_ussu - 0.5 * (t - t_ussu) * (P / 755);
+        if (w == 2) {
+            printf("e: %.13Lf\n", e);
+        }
+        // n_m değerinin hesaplanması
+        n_m = (( (103.49 / ( 273.2 + t) ) * ( P - e ) + ( 86.26 / ( 273.2 + t ) ) * ( 1 + ( 5748 / ( 273.2 + t ) ) ) * e ) / pow(10, 6)) + 1;
+        if (w == 3) {
+            printf("n_m: %.20Lf\n", n_m);
+        }
     }
-
 
 }
