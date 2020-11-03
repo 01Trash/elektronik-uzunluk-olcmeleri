@@ -94,7 +94,7 @@ int main()
         // e değerinin hesaplanması mmHg cinsinden
         printf("P değerini mmHg cinsinden giriniz: ");
         scanf("%Lf", &P);
-        e = E_ussu - 0.5 * (12-9) * (P / 755);
+        e = E_ussu - 0.5 * (12 - t_ussu) * (P / 755);
         if (z == 3) {
             printf("e: %.13Lf\n", e);
         }
