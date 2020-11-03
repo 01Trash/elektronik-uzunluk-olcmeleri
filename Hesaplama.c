@@ -11,6 +11,7 @@ int main()
     long double faz_Grad; //faz_Grad (Faz açsı grad cinsinden)
     long double s; //s (devir sayısı)
     long double n_g; //Grup kırılma indisi (ng)
+    long double t_ussu; //Islak hava sıcaklığı santigrad cinsinden
     long double E_ussu; //E üssü değeri mmHg cinsinden
     long double P; //P (mmHg) hava basıncı değeri
     long double e; //e değeri kısmi su buharı basıncı mmHg cinsinden
@@ -24,6 +25,7 @@ int main()
     // Neyi hesaplatmak istediğini sor.
     printf("1 => ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!\n");
     printf("2 => KIRILMA İNDİSİ (n)!!!\n");
+    printf("3 => MİKRO DALGALARIN KIRILMA İNDİSİ (n)!!!\n");
     printf("Hangisi: ");
     scanf("%d", &y);
     if (y == 1) {
@@ -83,7 +85,9 @@ int main()
             printf("n_g: %.20Lf\n", n_g);
         }
         // E üssü hesaplanması mmHg cinsinden
-        E_ussu = pow(10, (((7.5 * 9) / (237.3 + 9)) + 0.6609));
+        printf("t_ussu değerini santigrad cinsinden gir: ");
+        scanf("%Lf", &t_ussu);
+        E_ussu = pow(10, (((7.5 * t_ussu) / (237.3 + t_ussu)) + 0.6609));
         if (z == 2) {
             printf("E_ussu: %.13Lf mmHg\n", E_ussu);
         }
