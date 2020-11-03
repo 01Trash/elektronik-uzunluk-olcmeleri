@@ -77,16 +77,16 @@ int main()
             printf("n_g: %.20Lf\n", n_g);
         }
         // E üssü hesaplanması mmHg cinsinden
-        E_ussu = pow(10, (((7.5 * 9) / (273.15 + 9)) + 0.6609));
+        E_ussu = pow(10, (((7.5 * 9) / (237.3 + 9)) + 0.6609));
         if (z == 2) {
-            printf("E_ussu: %Lf mmHg\n", E_ussu);
+            printf("E_ussu: %.13Lf mmHg\n", E_ussu);
         }
         // e değerinin hesaplanması mmHg cinsinden
         printf("P değerini mmHg cinsinden giriniz: ");
         scanf("%Lf", &P);
         e = E_ussu - 0.5 * (12-9) * (P / 755);
         if (z == 3) {
-            printf("e: %Lf\n", e);
+            printf("e: %.13Lf\n", e);
         }
     }
 
