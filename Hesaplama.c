@@ -3,7 +3,7 @@
 
 int main()
 {
-    int x, y, z;
+    int x, y, z, w;
     long double c_Zero =  299792458; //c_Zero (boşlukta ışık hızı, m/s cinsinden)
     long double f; //f (frekans)
     long double lamda_Zero; //lamda_Zero (lamda değeri)
@@ -44,6 +44,12 @@ int main()
         printf("6 => Ortamdaki lamda değerinin hesaplanması,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
+    }
+    else if (y == 3) {
+        printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
+        printf("2 => bla blaa.. ,\n");
+        printf("Hesaplamak istediğin işlemi tuşla: ");
+        scanf("%d", &w);
     }
 
     // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
@@ -116,5 +122,12 @@ int main()
             printf("lamda: %.13Lf\n", lamda);
         }
     }
+
+    // MİKRO DALGALARIN KIRILMA İNDİSİ (n)!!!
+    else if (y == 3) {
+        // E üssü değerinin hesaplanması
+        printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
+    }
+
 
 }
