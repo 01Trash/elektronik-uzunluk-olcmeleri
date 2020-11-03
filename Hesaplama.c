@@ -39,7 +39,7 @@ int main()
         printf("3 => e değerinin hesaplanması mmHg cinsinden,\n");
         printf("4 => n_I değeri hesaplanması,\n");
         printf("5 => c değerinin hesaplanması m/s cinsinden,\n");
-        printf("6 => Ortamdaki lamda değerinin hesaplanması,");
+        printf("6 => Ortamdaki lamda değerinin hesaplanması,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
     }
@@ -97,7 +97,7 @@ int main()
         // n_I değeri hesaplanması
         printf("t (kuru sıcaklık) değerini gir: ");
         scanf("%Lf", &t);
-        n_I = 1 + ((0.35947 * (n_g - 1) * P) / (273.15 + t)) - ((1.5026 * e * pow(10, -5)) / (273.15 + t));
+        n_I = 1 + ((0.35947 * (n_g - 1) * P) / (273.2 + t)) - ((1.5026 * e * pow(10, -5)) / (273.2 + t));
         if (z == 4) {
             printf("n_I: %.13LF\n", n_I);
         }
