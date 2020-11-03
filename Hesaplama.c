@@ -13,7 +13,10 @@ int main()
     long double n_g; //Grup kırılma indisi (ng)
     long double E_ussu; //E üssü değeri mmHg cinsinden
     long double P; //P (mmHg) hava basıncı değeri
-    long double e; //e değeri mmHg cinsinden
+    long double e; //e değeri kısmi su buharı basıncı mmHg cinsinden
+    long double t; //t (kuru sıcaklık) santigrad cinsinden
+    long double n_I; //n_ı değeri
+    long double c; //c değeri m/s cinsinden
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -33,7 +36,8 @@ int main()
         printf("\n1 => Grup kırılma indisi (ng) hesaplanması,\n");
         printf("2 => E üssü hesaplanması mmHg cinsinden,\n");
         printf("3 => e değerinin hesaplanması mmHg cinsinden,\n");
-        printf("4 => blaa blaa\n");
+        printf("4 => n_I değeri hesaplanması,\n");
+        printf("5 => c değerinin hesaplanması m/s cinsinden,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &z);
     }
@@ -87,6 +91,18 @@ int main()
         e = E_ussu - 0.5 * (12-9) * (P / 755);
         if (z == 3) {
             printf("e: %.13Lf\n", e);
+        }
+        // n_I değeri hesaplanması
+        printf("t (kuru sıcaklık) değerini gir: ");
+        scanf("%Lf", &t);
+        n_I = 1 + ((0.35947 * (n_g - 1) * P) / (273.15 + t)) - ((1.5026 * e * pow(10, -5)) / (273.15 + t));
+        if (z == 4) {
+            printf("n_I: %.13LF\n", n_I);
+        }
+        // c değerinin hesabı m/s cinsinden
+        c = c_Zero / n_I;
+        if (z == 5) {
+            printf("c: %.2Lf\n", c);
         }
     }
 
