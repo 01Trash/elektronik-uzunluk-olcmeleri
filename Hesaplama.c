@@ -65,7 +65,7 @@ int main()
         // Grup Kırılma İndisi (ng) hesaplanması
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
-        n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) - 1;
+        n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) + 1;
         if (z == 1) {
             printf("n_g: %.20Lf\n", n_g);
         }
