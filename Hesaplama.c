@@ -9,7 +9,7 @@ int main()
     long double T; //T (periyod)
     long double faz_Grad, s; //faz_Grad (Faz açsı grad cinsinden), s (devir sayısı)
 
-    printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAP!!!###\n\n");
+    printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
     // Neyi hesaplatmak istediğini sor.
     printf("1 => Frekans hesaplaması,\n");
