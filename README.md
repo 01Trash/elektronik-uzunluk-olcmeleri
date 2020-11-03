@@ -1,2 +1,1 @@
-# elektronik-uzunluk-olcmeleri
-Elektronik Uzunluk Ölçmeleri hesaplamaları.
+# Elektronik Uzunluk Ölçmeleri hesaplamaları.
