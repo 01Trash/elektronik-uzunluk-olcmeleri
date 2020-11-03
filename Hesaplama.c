@@ -25,13 +25,11 @@ int main()
     if (x == 1) {
         printf("f: %Lf GHz cinsinden.\n", f);
     }
-
     // Periyod (T) hesaplaması, ns cinsinden.
     T = 1 / (f * pow(10, -9));
     if (x == 2) {
         printf("T: %.25Lf ns cinsinden.\n", T);
     }
-
     // Faz açısı hesaplanması grad cinsinden.
     printf("Işığın boşlukta aldığı yolu (s) metre cinsinden giriniz: ");
     scanf("%Lf", &s);
