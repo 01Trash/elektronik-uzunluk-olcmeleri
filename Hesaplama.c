@@ -3,7 +3,7 @@
 
 int main()
 {
-    int x, y, z, w;
+    int x, y, z, w, g;
     long double c_Zero =  299792458; //c_Zero (boşlukta ışık hızı, m/s cinsinden)
     long double f; //f (frekans)
     long double lamda_Zero; //lamda_Zero (lamda değeri)
@@ -21,6 +21,13 @@ int main()
     long double lamda; //Ortamdaki lamda değeri Mikrometre(µm) cinsinden
     long double n_m; //Mikro dalga kırılma indisi (nm)
     long double Essen_Froome; //Essen ve Froome eşitliği
+    long double gidis_donus; //Işığın gidiş-dönüş zamanı
+    long double isik_hizi; //Ortamın ışık hızı
+    long double Delta; //Alet ile reflektör arası mesafe
+    long double fg; //Gönderilen frekans mHz
+    long double fA; //Alınan frekans mHz
+    long double delta_t; //Seyahat süresi
+    long double Lamda; //Dalga boyu m cinsinde
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -28,6 +35,7 @@ int main()
     printf("1 => ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!\n");
     printf("2 => KIRILMA İNDİSİ (n)!!!\n");
     printf("3 => MİKRO DALGALARIN KIRILMA İNDİSİ (n)!!!\n");
+    printf("4 => ELEKTRONİK UZUNLUK ÖLÇMELERİ YÖNTEMLERİ!!!\n");
     printf("Hangisi: ");
     scanf("%d", &y);
     if (y == 1) {
@@ -54,6 +62,12 @@ int main()
         printf("4 => Essen ve Froome eşitliği,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &w);
+    }
+    else if(y == 4) {
+        printf("\n1 => İmpuls yöntemi (Pulse) m cinsinden,\n");
+        printf("2 => Doppler yöntemi m cinsinden,\n");
+        printf("Hesaplamak istediğin işlemi tuşla: ");
+        scanf("%d", &g);
     }
 
     // ELEKTROMANYETİK DALGALARIN TEMELLERİ!!!
@@ -154,6 +168,32 @@ int main()
         Essen_Froome = n_m + 0.5 * pow(10, -6);
         if (w == 4) {
             printf("Essen ve Froome Eşitliği: %.13Lf\n", Essen_Froome);
+        }
+    }
+
+    // ELEKTRONİK UZUNLUK ÖLÇMELERİ YÖNTEMLERİ
+    else if(y == 4) {
+        // İmpuls yöntemi (Pulse) hesaplama
+        if(g == 1){
+            printf("Işığı gidiş-dönüş seyahat süresi saniye cinsinde: ");
+            scanf("%Lf", &gidis_donus);
+            printf("Ortamın ışık hızı m/s cinsinde: ");
+            scanf("%Lf", &isik_hizi);
+            Delta = (0.5) * gidis_donus * isik_hizi;
+            printf("Delta mesafe değeri %.13Lf m\n", Delta);
+        }
+        // Doppler yöntemi hesaplama
+        if(g == 2) {
+            printf("Gönderilen sinyalin frekansı mHz cinsinde: ");
+            scanf("%Lf", &fg);
+            printf("Yansıtıcıdan dönen sinyalin frekansı mHz cinsinde: ");
+            scanf("%Lf", &fA);
+            printf("Seyahat süresi saniye cinside: ");
+            scanf("%Lf", &delta_t);
+            printf("Lamda değeri m cinsinde: ");
+            scanf("%Lf", &Lamda);
+            Delta = (0.5) * ((fA - fg) * 1000000) * Lamda * delta_t;
+            printf("Delta mesafe değeri %.13Lf m\n", Delta);
         }
     }
 }
