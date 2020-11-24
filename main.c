@@ -28,6 +28,8 @@ int main()
     long double fA; //Alınan frekans mHz
     long double delta_t; //Seyahat süresi
     long double Lamda; //Dalga boyu m cinsinde
+    long double faz_farki_4, faz_farki_3, faz_farki_2, faz_farki_1; //Faz farkları
+    long double Li_4, Li_3, Li_2, Li_1; //Li değerleri
 
     printf("###ELEKTRONİK UZUNLUK ÖLÇMELERİ HESAPLAMALARI!!!###\n");
 
@@ -66,6 +68,7 @@ int main()
     else if(y == 4) {
         printf("\n1 => İmpuls yöntemi (Pulse) m cinsinden,\n");
         printf("2 => Doppler yöntemi m cinsinden,\n");
+        printf("4 => Faz farkı yöntemi m cinsinden,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &g);
     }
@@ -194,6 +197,33 @@ int main()
             scanf("%Lf", &Lamda);
             Delta = (0.5) * ((fA - fg) * 1000000) * Lamda * delta_t;
             printf("Delta mesafe değeri %.13Lf m\n", Delta);
+        }
+        // Faz Farkı Yöntemi
+        if (g == 4) {
+            printf("  |  li  |  Ui (m)  |  li * Ui (m)  \n");
+            printf("4 | ");
+            scanf("%Lf", &faz_farki_4);
+            printf("3 | ");
+            scanf("%Lf", &faz_farki_3);
+            printf("2 | ");
+            scanf("%Lf", &faz_farki_2);
+            printf("1 | ");
+            scanf("%Lf", &faz_farki_1);
+            Li_4 = faz_farki_4 * 10000;
+            Li_3 = faz_farki_3 * 1000;
+            Li_2 = faz_farki_2 * 100;
+            Li_1 = faz_farki_1 * 10;
+            printf("\nTaploda gösterimi => \n");
+            printf("  |   li (m)  |  Ui (m)  |  li * Ui (m)  \n");
+            printf("-------------------------------------------\n");
+            printf("4 | %Lf  |   10000  |     %.5Lf     \n", faz_farki_4, Li_4);
+            printf("3 | %Lf  |    1000  |     %.5Lf     \n", faz_farki_3, Li_3);
+            printf("2 | %Lf  |     100  |     %.5Lf     \n", faz_farki_2, Li_2);
+            printf("1 | %Lf  |      10  |     %.5Lf     \n", faz_farki_1, Li_1);
+            Li_4 = floorl(Li_4 / 1000);
+            Li_3 = floorl(Li_3 / 100);
+            Li_2 = floorl(Li_2 / 10);
+            printf("Se %.0Lf%.0Lf%.0Lf%.13Lf m\n", Li_4, Li_3, Li_2, Li_1);
         }
     }
 }
