@@ -214,7 +214,7 @@ int main()
             Li_2 = faz_farki_2 * 100;
             Li_1 = faz_farki_1 * 10;
             printf("\nTaploda gösterimi => \n");
-            printf("  |   li (m)  |  Ui (m)  |  li * Ui (m)  \n");
+            printf("  |     li    |  Ui (m)  |  li * Ui (m)  \n");
             printf("-------------------------------------------\n");
             printf("4 | %Lf  |   10000  |     %.5Lf     \n", faz_farki_4, Li_4);
             printf("3 | %Lf  |    1000  |     %.5Lf     \n", faz_farki_3, Li_3);
