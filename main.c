@@ -136,12 +136,12 @@ int main()
         // c değerinin hesabı m/s cinsinden
         c = c_Zero / n_I;
         if (z == 5) {
-            printf("c: %.2Lf\n", c);
+            printf("c: %Lf m/s\n", c);
         }
         // Ortamdaki lamda değerinin hesaplanması Mikrometre(µm) cinsinden
         lamda = (lamda_Zero / n_I) * pow(10, 3);
         if (z == 6) {
-            printf("lamda: %.13Lf\n", lamda);
+            printf("lamda: %.13Lf mikrometre\n", lamda);
         }
     }
 
