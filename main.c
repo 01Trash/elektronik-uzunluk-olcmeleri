@@ -124,7 +124,7 @@ int main()
         scanf("%Lf", &P);
         e = E_ussu - 0.5 * (t - t_ussu) * (P / 755);
         if (z == 3) {
-            printf("e: %.13Lf\n", e);
+            printf("e: %.13Lf mmHg\n", e);
         }
         // n_I değeri hesaplanması
         printf("t (kuru sıcaklık) santigrad cinsinden gir: ");
