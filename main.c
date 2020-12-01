@@ -108,27 +108,27 @@ int main()
         // Grup Kırılma İndisi (ng) hesaplanması
         printf("lamda_Zero değerini Mikrometre(µm) cinsinden gir: ");
         scanf("%Lf", &lamda_Zero);
+        printf("t_ussu değerini santigrad cinsinden gir: ");
+        scanf("%Lf", &t_ussu);
+        printf("P değerini mmHg cinsinden giriniz: ");
+        scanf("%Lf", &P);
+        printf("t (kuru sıcaklık) santigrad cinsinden gir: ");
+        scanf("%Lf", &t);
         n_g = ((287.604 + (4.8864 / pow(lamda_Zero, 2)) + (0.0680 / pow(lamda_Zero, 4))) / pow(10, 6)) + 1;
         if (z == 1) {
             printf("n_g: %.20Lf\n", n_g);
         }
         // E üssü hesaplanması mmHg cinsinden
-        printf("t_ussu değerini santigrad cinsinden gir: ");
-        scanf("%Lf", &t_ussu);
         E_ussu = pow(10, (((7.5 * t_ussu) / (237.3 + t_ussu)) + 0.6609));
         if (z == 2) {
             printf("E_ussu: %.13Lf mmHg\n", E_ussu);
         }
         // e değerinin hesaplanması mmHg cinsinden
-        printf("P değerini mmHg cinsinden giriniz: ");
-        scanf("%Lf", &P);
         e = E_ussu - 0.5 * (t - t_ussu) * (P / 755);
         if (z == 3) {
             printf("e: %.13Lf mmHg\n", e);
         }
         // n_I değeri hesaplanması
-        printf("t (kuru sıcaklık) santigrad cinsinden gir: ");
-        scanf("%Lf", &t);
         n_I = 1 + ((0.35947 * (n_g - 1) * P) / (273.2 + t)) - ((1.5026 * e * pow(10, -5)) / (273.2 + t));
         if (z == 4) {
             printf("n_I: %.13LF\n", n_I);
@@ -141,7 +141,7 @@ int main()
         // Ortamdaki lamda değerinin hesaplanması Mikrometre(µm) cinsinden
         lamda = (lamda_Zero / n_I) * pow(10, 3);
         if (z == 6) {
-            printf("lamda: %.13Lf mikrometre\n", lamda);
+            printf("lamda: %.13Lf nanometre\n", lamda);
         }
     }
 
