@@ -20,6 +20,7 @@ int main()
     long double c; //c değeri m/s cinsinden
     long double lamda; //Ortamdaki lamda değeri Mikrometre(µm) cinsinden
     long double n_m; //Mikro dalga kırılma indisi (nm)
+    long double C; //Düzeltme sonrası c
     long double Essen_Froome; //Essen ve Froome eşitliği
     long double gidis_donus; //Işığın gidiş-dönüş zamanı
     long double isik_hizi; //Ortamın ışık hızı
@@ -61,7 +62,7 @@ int main()
         printf("\n1 => E üssü hesaplanması mmHg cinsinden,\n");
         printf("2 => e değerinin hesaplanması mmHg cinsinden,\n");
         printf("3 => Mikro dalga kırılma indisi (nm) hesaplanması,\n");
-        printf("4 => Essen ve Froome eşitliği,\n");
+        printf("4 => Essen ve Froome düzeltmesi ve hızı,\n");
         printf("Hesaplamak istediğin işlemi tuşla: ");
         scanf("%d", &w);
     }
@@ -160,17 +161,21 @@ int main()
         scanf("%Lf", &P);
         e = E_ussu - 0.5 * (t - t_ussu) * (P / 755);
         if (w == 2) {
-            printf("e: %.13Lf\n", e);
+            printf("e: %.13Lf mmHg\n", e);
         }
         // n_m değerinin hesaplanması
         n_m = (((103.49 / (273.2 + t)) * (P - e) + (86.26 / (273.2 + t)) * (1 + (5748 / (273.2 + t))) * e) / pow(10, 6)) + 1;
         if (w == 3) {
             printf("n_m: %.20Lf\n", n_m);
+            C = c_Zero * n_m;
+            printf("C düzeltme öncesi: %Lf m/s\n", C);
         }
-        // Essen ve Froome eşitliği
+        // Essen ve Froome eşitliği düzetlmesi Lamda0 = 8 mm ve e = 10 mmHg ise
         Essen_Froome = n_m + 0.5 * pow(10, -6);
         if (w == 4) {
-            printf("Essen ve Froome Eşitliği: %.13Lf\n", Essen_Froome);
+            printf("Essen ve Froome Eşitliği düzeltmesi: %.13Lf\n", Essen_Froome);
+            C = c_Zero * Essen_Froome;
+            printf("C düzeltme sonrası: %Lf m/s\n", C);
         }
     }
 
