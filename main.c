@@ -173,7 +173,7 @@ int main()
         // Essen ve Froome eşitliği düzetlmesi Lamda0 = 8 mm ve e = 10 mmHg ise
         Essen_Froome = n_m + 0.5 * pow(10, -6);
         if (w == 4) {
-            printf("Essen ve Froome Eşitliği düzeltmesi: %.13Lf\n", Essen_Froome);
+            printf("Essen ve Froome eşitliği düzeltmesi: %.13Lf\n", Essen_Froome);
             C = c_Zero * Essen_Froome;
             printf("C düzeltme sonrası: %Lf m/s\n", C);
         }
